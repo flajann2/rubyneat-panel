@@ -1,4 +1,7 @@
+require 'thor'
+require 'fox16'
 
+include Fox
 
 module RubyNEAT
   module Panel

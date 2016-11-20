@@ -1,6 +1,34 @@
-* rubyneat-panel
+* RubyNEAT Panel
 
-  Description goes here.
+** Description
+   RubyNEAT Panel is a dashboard interface to monitor the activities of RubyNEAT. It
+   utilizes the FOX libraries to create a portable GUI to allow to to see and control
+   RubyNEAT in a graphical manner, and to explore the structure of the neural nets.
+
+** Features
+
+** Installation
+   You will need the native Fox libraries installed on your
+   system. Please see [[https://github.com/larskanis/fxruby#install][FxRuby Installation]] for the details. You needen't concern
+   yourself with the details of the actual gem installation of fxruby, because
+   it is listed as a dependency, anyway, by rubyneat-panel
+
+   From command-line:
+   #+BEGIN_SRC bash
+   gem install rubyneat-panel
+   #+END_SRC
+
+   Or from a gemfile:
+   #+BEGIN_SRC ruby
+   gem 'rubyneat-panel'
+   #+END_SRC
+
+*** TODO Setup with RubyNEAT
+
+** TODO Release Notes and Known Issues
+*** TODO Release Notes
+*** TODO Known Issues
+
 
 ** Contributing to rubyneat-panel
  

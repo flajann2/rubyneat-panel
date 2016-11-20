@@ -7,4 +7,4 @@ $:.unshift File.join([NPANEL_PATH, 'lib'])
 
 require 'rubyneat-panel'
 
-RubyNEAT::Panel::Main.start
+RubyNEAT::Panel.start
