@@ -1,5 +1,5 @@
 require 'thor'
-require 'fox16'
+require 'fxruby-enhancement'
 
 include Fox
 
@@ -9,13 +9,9 @@ module RubyNEAT
   module Panel
     def self.start
       puts "We've started. Running test."
-      @@application = FXApp.new("RubyNEAT Panel", "Dashboard")
+      Enhancement.app_set "RubyNEAT Panel", "www.RubyNEAT.de"
       launch
       test
     end
-
-    def self.app
-      @@application
-    end    
   end
 end

@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 
 gem "semver", "~> 1"
-gem "fxruby", "~> 1.6"
+gem "fxruby-enhancement", "~> 0"
 gem "thor",   "~> 0"
 
 group :development do

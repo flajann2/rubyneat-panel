@@ -2,21 +2,23 @@ module RubyNEAT
   module Panel
     def self.launch
       main = Main.new
-      Panel.app.create
-      Panel.app.run
+      Enhancement.app.create
+      Enhancement.app.run
     end
     
     def self.test
-      main = FXMainWindow.new(Panel.app, "RubyNEAT Dashboard", nil, nil, DECOR_NONE)
+      main = FXMainWindow.new(Enhancement.app, "RubyNEAT Dashboard", nil, nil, DECOR_NONE)
       FXButton.new(main, "&RubyNEAT Panel Test!", nil, Panel.app, FXApp::ID_QUIT)
-      Panel.app.create()
+      Enhancement.app.create()
       main.show(PLACEMENT_SCREEN)
-      Panel.app.run()
+      Enhancement.run()
     end
     
     class Main < FXMainWindow
+      include Enhancement
+      
       def initialize
-        super(Panel.app, "RubyNEAT Panel", width: 700, height: 400)
+        super(Enhancement.app, "RubyNEAT Panel", width: 700, height: 400)
       end
 
       def create
