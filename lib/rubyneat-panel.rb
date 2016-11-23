@@ -7,11 +7,12 @@ require_relative 'rubyneat-panel/main'
 
 module RubyNEAT
   module Panel
+    extend Enhancement
+    
     def self.start
       puts "We've started. Running test."
-      Enhancement.app_set "RubyNEAT Panel", "www.RubyNEAT.de"
+      app_set "RubyNEAT Panel", "www.RubyNEAT.de"
       launch
-      test
     end
   end
 end
