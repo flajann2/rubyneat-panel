@@ -7,15 +7,13 @@ module RubyNEAT
     
     class Main < FXMainWindow
       include Enhancement
-      
-      def initialize
-        super(application, "RubyNEAT Panel", width: 700, height: 400)
-      end
 
-      def create
-        super
-        show(PLACEMENT_SCREEN)
-      end
+      window do
+        title "RubyNEAT Panel"
+        show PLACEMENT_SCREEN
+        width 700
+        height 400
+      end      
     end
   end
 end
