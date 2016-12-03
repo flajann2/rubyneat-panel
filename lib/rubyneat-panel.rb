@@ -1,5 +1,6 @@
 require 'thor'
 require 'fxruby-enhancement'
+require 'awesome_print'
 
 include Fox
 
@@ -12,7 +13,6 @@ module RubyNEAT
     def self.start
       puts "We've started. Running test."
       app_set "RubyNEAT Panel", "www.RubyNEAT.de"
-      require 'pry'; binding.pry #DEBUGGING
       launch
     end
   end

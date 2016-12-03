@@ -4,7 +4,7 @@
    RubyNEAT Panel is a dashboard interface to monitor the activities of RubyNEAT. It
    utilizes the FOX libraries to create a portable GUI to allow to to see and control
    RubyNEAT in a graphical manner, and to explore the structure of the neural nets.
-
+   
 ** Features
 
 ** Installation

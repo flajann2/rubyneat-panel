@@ -1,19 +1,24 @@
 module RubyNEAT
   module Panel
     def self.launch
-      main = Main.new
       app_activate
     end
     
-    class Main < FXMainWindow
-      include Enhancement
-
-      window do
+    @@app = fx_app do
+      app_name "RubyNEAT Panel"
+      vendor_name "www.rubyneat.de"
+      
+      fx_main_window :main do
         title "RubyNEAT Panel"
-        show PLACEMENT_SCREEN
         width 700
         height 400
-      end      
+        instance { |mw| mw.show PLACEMENT_SCREEN }
+      end
+
+      instance do
+        create
+        run
+      end
     end
   end
 end
