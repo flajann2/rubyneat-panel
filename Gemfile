@@ -13,10 +13,10 @@ group :development do
   gem "juwelier",  "~> 2"
   gem "simplecov", ">= 0"
   
-  gem 'pry',                '~> 0'
-  gem 'pry-byebug',         '~> 3'
-  gem 'pry-doc',            '~> 0'
-  gem 'pry-remote',         '~> 0'
-  gem 'pry-rescue',         '~> 1'
-  gem 'pry-stack_explorer', '~> 0'
+  gem 'pry',                '>= 0'
+  gem 'pry-byebug',         '>= 3'
+  gem 'pry-doc',            '>= 0'
+  gem 'pry-remote',         '>= 0'
+  gem 'pry-rescue',         '>= 1'
+  gem 'pry-stack_explorer', '>= 0'
 end
