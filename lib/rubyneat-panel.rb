@@ -3,6 +3,7 @@ require 'fxruby-enhancement'
 require 'awesome_print'
 
 include Fox
+include Fox::Enhancement::Mapper
 
 require_relative 'rubyneat-panel/main'
 
@@ -11,8 +12,7 @@ module RubyNEAT
     extend Enhancement
     
     def self.start
-      puts "We've started. Running test."
-      app_set "RubyNEAT Panel", "www.RubyNEAT.de"
+      puts "We've started."
       launch
     end
   end

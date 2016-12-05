@@ -1,10 +1,15 @@
 module RubyNEAT
   module Panel
     def self.launch
-      app_activate
+      fox_get_component :app do |app|
+        app.create_fox_components
+        app.instance_final_activate
+        app.activate
+        app.run_application
+      end
     end
     
-    @@app = fx_app do
+    fx_app :app do
       app_name "RubyNEAT Panel"
       vendor_name "www.rubyneat.de"
       
@@ -13,11 +18,6 @@ module RubyNEAT
         width 700
         height 400
         instance { |mw| mw.show PLACEMENT_SCREEN }
-      end
-
-      instance do
-        create
-        run
       end
     end
   end
