@@ -21,9 +21,7 @@ module RubyNEAT
         height 400
         instance { |mw| mw.show PLACEMENT_SCREEN }
 
-        fx_menu_bar ii: 1 do
-          opts LAYOUT_SIDE_TOP|LAYOUT_FILL_X
-        end
+        fx_menu_bar { opts LAYOUT_SIDE_TOP|LAYOUT_FILL_X }
         fx_horizontal_separator { opts LAYOUT_SIDE_TOP|LAYOUT_FILL_X|SEPARATOR_GROOVE }
         fx_horizontal_frame do
           opts LAYOUT_SIDE_TOP|FRAME_NONE|LAYOUT_FILL_X|LAYOUT_FILL_Y|PACK_UNIFORM_WIDTH
