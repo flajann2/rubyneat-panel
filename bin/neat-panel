@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+NPANEL_PATH = File.expand_path '..', File.dirname(__FILE__)
+NPANEL_EXECUTABLE = File.expand_path 'bin/neatpanel', Dir.pwd
+
+$:.unshift File.join([NPANEL_PATH, 'lib'])
+
+require 'rubyneat-panel'
+
+RubyNEAT::Panel.start
