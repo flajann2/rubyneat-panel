@@ -1,3 +1,4 @@
+# coding: utf-8
 module RubyNEAT
   module Panel
     def self.launch
@@ -13,6 +14,7 @@ module RubyNEAT
     STD_SEPERATOR = LAYOUT_SIDE_TOP | LAYOUT_FILL_X | SEPARATOR_GROOVE
     STD_LAYOUT    = LAYOUT_FILL_X | LAYOUT_FILL_Y
     STD_GROUPBOX  = GROUPBOX_NORMAL | LAYOUT_FILL_X | FRAME_GROOVE
+    STD_GROUPBOX_HORIZ  = GROUPBOX_NORMAL | LAYOUT_FILL_X | LAYOUT_FILL_Y | FRAME_GROOVE
     
     fx_app :app do
       app_name "RubyNEAT Panel"
@@ -22,8 +24,8 @@ module RubyNEAT
       
       fx_main_window (:main) do
         title "RubyNEAT Panel"
-        width 700
-        height 400
+        width 900
+        height 700
         instance { |mw| mw.show PLACEMENT_SCREEN }
 
         fx_menu_bar { opts LAYOUT_SIDE_TOP|LAYOUT_FILL_X }
@@ -35,28 +37,70 @@ module RubyNEAT
             
             fx_tab_item { text "&Overview" }
             fx_horizontal_frame (:overview_info) {
-              opts STD_FRAME
+              opts STD_FRAME|LAYOUT_FILL_Y
+              
               fx_group_box (:ov_connections_group) {
                 text "Connections"
-                opts STD_GROUPBOX
+                opts STD_GROUPBOX|LAYOUT_FILL_Y
                 
-                fx_group_box (:ov_conn_rabbitmq) {
-                  text "RabbitMQ"
-                  opts STD_GROUPBOX
+                fx_vertical_frame {
+                  opts LAYOUT_FILL_Y|LAYOUT_FILL_X #|PACK_UNIFORM_HEIGHT
                   
-                  fx_list {
-                    opts LIST_EXTENDEDSELECT|STD_LAYOUT
-                    instance { |list|
-                      list.appendItem "First"
-                      list.appendItem "Second"
-                      list.appendItem "Third"
+                  fx_group_box (:ov_conn_rabbitmq) {
+                    text "RabbitMQ"
+                    opts STD_GROUPBOX|LAYOUT_FILL_Y
+                    
+                    fx_list {
+                      opts LIST_EXTENDEDSELECT|STD_LAYOUT
+                      instance { |list|
+                        list.appendItem "First"
+                        list.appendItem "Second"
+                        list.appendItem "Third"
+                      }
                     }
                   }
-                }
-
-                fx_group_box (:ov_conn_neaters){
-                  text "NEATers"
-                  opts STD_GROUPBOX
+                  
+                  fx_group_box (:ov_conn_neaters) {
+                    text "NEATers"
+                    opts STD_GROUPBOX|LAYOUT_FILL_Y
+                    
+                    fx_horizontal_frame {
+                      opts PACK_UNIFORM_WIDTH|LAYOUT_FILL_X
+                      
+                      fx_group_box (:ov_conn_neaters_list) {
+                        text "List"
+                        opts STD_GROUPBOX_HORIZ #|PACK_UNIFORM_HEIGHT
+                        
+                        fx_vertical_frame {
+                          opts STD_LAYOUT|STD_FRAME
+                          
+                          fx_list {
+                            opts LIST_EXTENDEDSELECT|STD_LAYOUT
+                            
+                            instance { |list|
+                              list.appendItem "XOR"
+                              list.appendItem "Pole Balancing"
+                              list.appendItem "Curve Fitting"
+                            }
+                          }
+                          
+                          fx_spring { opts LAYOUT_FILL_Y;  relw 20 }
+                          
+                          fx_horizontal_frame {
+                            opts LAYOUT_CENTER_X
+                            fx_button (:ov_conn_neaters_run) { text "RUN" }
+                            fx_button (:ov_conn_neaters_halt) { text "STOP" }
+                          }
+                        }
+                      }
+                      
+                      fx_group_box (:ov_conn_neaters_details) {
+                        text "Details"
+                        opts STD_GROUPBOX_HORIZ
+                        fx_file_list { opts ICONLIST_EXTENDEDSELECT|STD_LAYOUT }
+                      }
+                    }
+                  }
                 }
               }
             }
