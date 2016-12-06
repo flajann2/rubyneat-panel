@@ -1,4 +1,5 @@
 require 'simplecov'
+require 'rubyneat-panel'
 
 module SimpleCov::Configuration
   def clean_filters

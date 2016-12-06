@@ -1,7 +1,8 @@
 #!/usr/bin/env ruby
 
 NPANEL_PATH = File.expand_path '..', File.dirname(__FILE__)
-NPANEL_EXECUTABLE = File.expand_path 'bin/neatpanel', Dir.pwd
+NPANEL_EXECUTABLE = File.expand_path 'bin/neat-panel', Dir.pwd
+NPANEL_IMAGE_PATH = File.join([NPANEL_PATH, 'images'])
 
 $:.unshift File.join([NPANEL_PATH, 'lib'])
 

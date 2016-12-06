@@ -1,7 +1,10 @@
 require_relative 'spec_helper'
 
-describe RubyNEAT::Panel do
-  it "fails" do
-    fail "hey buddy, you should probably rename this file and start specing for real"
+include RubyNEAT::Panel
+
+describe Assets do
+  it "checks the existence of assets" do
+    expect(File.exists?(Assets::BANNER)).to be_truthy
+    expect(File.exists?(Assets::ICON)).to be_truthy
   end
 end

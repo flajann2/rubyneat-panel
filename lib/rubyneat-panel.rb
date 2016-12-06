@@ -5,6 +5,7 @@ require 'awesome_print'
 include Fox
 include Fox::Enhancement::Mapper
 
+require_relative 'rubyneat-panel/assets'
 require_relative 'rubyneat-panel/main'
 
 module RubyNEAT
