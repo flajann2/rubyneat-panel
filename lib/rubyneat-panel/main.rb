@@ -32,7 +32,7 @@ module RubyNEAT
         fx_horizontal_separator { opts STD_SEPERATOR }
         fx_horizontal_frame do
           opts LAYOUT_SIDE_TOP|FRAME_NONE|STD_LAYOUT|PACK_UNIFORM_WIDTH
-          fx_tab_book :tab_book do
+          fx_tab_book (:tab_book) do
             opts STD_LAYOUT
             
             fx_tab_item { text "&Overview" }
@@ -49,13 +49,28 @@ module RubyNEAT
                   fx_group_box (:ov_conn_rabbitmq) {
                     text "RabbitMQ"
                     opts STD_GROUPBOX|LAYOUT_FILL_Y
-                    
-                    fx_list {
-                      opts LIST_EXTENDEDSELECT|STD_LAYOUT
-                      instance { |list|
-                        list.appendItem "First"
-                        list.appendItem "Second"
-                        list.appendItem "Third"
+                    fx_matrix {
+                      n 2
+                      opts LAYOUT_FILL_ROW
+                      
+                      fx_label { text "Address" }
+                      fx_label { text "Channel" }
+                      fx_text_field (:ov_conn_rabbit_addr) { opts LAYOUT_CENTER_X; ncols 40 }
+                      fx_text_field (:ov_conn_rabbit_channel) { opts LAYOUT_CENTER_X; ncols 40 }
+                    }
+
+                    fx_group_box {
+                      text "Channels"
+                      opts STD_GROUPBOX_HORIZ
+                      
+                      fx_list (:ov_conn_rabbitmq_list) {
+                        opts LIST_EXTENDEDSELECT|STD_LAYOUT
+                        
+                        instance { |list|
+                          list.appendItem "rubyneat.c1"
+                          list.appendItem "rubyneat.tellin"
+                          list.appendItem "rubyneat.secret"
+                        }
                       }
                     }
                   }
@@ -99,10 +114,16 @@ module RubyNEAT
                         }
                       }
                       
-                      fx_group_box (:ov_conn_neaters_details) {
+                      fx_group_box {
                         text "Details"
                         opts STD_GROUPBOX_HORIZ
-                        fx_file_list { opts ICONLIST_EXTENDEDSELECT|STD_LAYOUT }
+                        fx_text (:ov_conn_neater_details) {
+                          opts ICONLIST_EXTENDEDSELECT|STD_LAYOUT
+                          instance { |t|
+                            t.text = "This can be beyond cool"
+                            t.editable = false
+                          }
+                        }
                       }
                     }
                   }
