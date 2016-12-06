@@ -65,14 +65,14 @@ module RubyNEAT
                     opts STD_GROUPBOX|LAYOUT_FILL_Y
                     
                     fx_horizontal_frame {
-                      opts PACK_UNIFORM_WIDTH|LAYOUT_FILL_X
+                      opts PACK_UNIFORM_WIDTH|LAYOUT_FILL_X|LAYOUT_FILL_Y
                       
                       fx_group_box (:ov_conn_neaters_list) {
                         text "List"
-                        opts STD_GROUPBOX_HORIZ #|PACK_UNIFORM_HEIGHT
+                        opts  STD_GROUPBOX_HORIZ 
                         
                         fx_vertical_frame {
-                          opts STD_LAYOUT|STD_FRAME
+                          opts STD_LAYOUT
                           
                           fx_list {
                             opts LIST_EXTENDEDSELECT|STD_LAYOUT
@@ -80,11 +80,16 @@ module RubyNEAT
                             instance { |list|
                               list.appendItem "XOR"
                               list.appendItem "Pole Balancing"
+                              list.appendItem "Face Recognition"
                               list.appendItem "Curve Fitting"
                             }
                           }
                           
-                          fx_spring { opts LAYOUT_FILL_Y;  relw 20 }
+                          fx_spring { opts LAYOUT_FILL_Y;  relw 10 }
+                          
+                          fx_text_field (:ov_conn_neaters_selected) { opts LAYOUT_CENTER_X; ncols 40 }
+                          
+                          fx_spring { opts LAYOUT_FILL_Y;  relw 10 }
                           
                           fx_horizontal_frame {
                             opts LAYOUT_CENTER_X
