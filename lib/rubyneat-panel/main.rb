@@ -21,6 +21,10 @@ module RubyNEAT
       vendor_name "www.rubyneat.de"
       
       fx_tool_tip {}
+
+      fxpng_icon (:logo_banner) {
+        File.open(Assets::BANNER, "r") { |f| pix f.read  }
+      }
       
       fx_main_window (:main) do
         title "RubyNEAT Panel"
@@ -28,7 +32,11 @@ module RubyNEAT
         height 700
         instance { |mw| mw.show PLACEMENT_SCREEN }
 
-        fx_menu_bar { opts LAYOUT_SIDE_TOP|LAYOUT_FILL_X }
+        fx_label {
+          opts LAYOUT_SIDE_TOP|LAYOUT_FILL_X
+          text ""
+          instance { |l|  l.icon = ref :logo_banner }
+        }
         fx_horizontal_separator { opts STD_SEPERATOR }
         fx_horizontal_frame do
           opts LAYOUT_SIDE_TOP|FRAME_NONE|STD_LAYOUT|PACK_UNIFORM_WIDTH
