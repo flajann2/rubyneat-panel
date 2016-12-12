@@ -43,31 +43,12 @@ module RubyNEAT
           opts LAYOUT_SIDE_TOP|FRAME_NONE|STD_LAYOUT|PACK_UNIFORM_WIDTH
           fx_tab_book (:tab_book) do
             opts STD_LAYOUT
-            
+
+            # Tabs
             binding.fx "overview"
-            
-            fx_tab_item { text "&Control Settings" }
-            fx_horizontal_frame {
-              opts STD_FRAME
-              fx_file_list {
-                opts ICONLIST_EXTENDEDSELECT|STD_LAYOUT
-              }
-            }
-            
-            
-            fx_tab_item { text "C&ritters" }
-            fx_horizontal_frame {
-              opts STD_FRAME
-              fx_dir_list { opts DIRLIST_SHOWFILES|TREELIST_SHOWS_LINES|TREELIST_SHOWS_BOXES|STD_LAYOUT }
-            }
-
-            fx_tab_item { text "&View" }
-            fx_horizontal_frame { opts STD_FRAME }
-
-            fx_menu_pane {
-              fx_menu_command { text "Something Special"; selector FXTabBar::ID_OPEN_FIRST+0 }
-              fx_menu_command { text "Not So Special"; selector FXTabBar::ID_OPEN_FIRST+1 }
-            }
+            binding.fx "settings"
+            binding.fx "critters"
+            binding.fx "stats"
           end
         end
       end
