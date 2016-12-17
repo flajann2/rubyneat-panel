@@ -1,9 +1,10 @@
 source "https://rubygems.org"
 
-gem "semver", "~> 1"
+gem "semver",             "~> 1"
+gem 'bunny',              "~> 1"
 gem "fxruby-enhancement", "~> 0"
-gem "thor",   "~> 0"
-gem "awesome_print", ">= 1"
+gem "thor",               "~> 0"
+gem "awesome_print",      ">= 1"
 
 group :development do
   gem "rspec",     "~> 2"
