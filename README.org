@@ -5,7 +5,7 @@
    utilizes the FOX libraries to create a portable GUI to allow to to see and control
    RubyNEAT in a graphical manner, and to explore the structure of the neural nets.
    
-** Features
+** TODO Features
 ** Installation
    You will need the native Fox libraries installed on your
    system. Please see [[https://github.com/larskanis/fxruby#install][FxRuby Installation]] for the details. You needen't concern
@@ -24,13 +24,12 @@
 
 *** TODO Setup with RubyNEAT
 
-** Documentation
+** TODO Documentation
 ** TODO Release Notes and Known Issues
 *** TODO Release Notes
 *** TODO Known Issues
 
 ** Contributing to rubyneat-panel
- 
    - Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet.
    - Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it.
    - Fork the project.
@@ -40,6 +39,13 @@
    - Please try not to mess with the Rakefile, version, or history. If you want to have your own version, or is otherwise necessary, that is fine, but please isolate to its own commit so I can cherry-pick around it.
 
 ** Copyright
-
    Copyright (c) 2016-2017 Fred Mitchell. See LICENSE.txt for
    further details.
+** The Junkyard / Scratchpad
+   The contents in this section are for my own personal notes
+   about the code, and various code snippets I may have removed
+   from the main code but wish to preserve for reference. I make
+   no claims to anything in this section for being up to date
+   or even accurate. You are free to poke around here, but
+   that's about it.
+
