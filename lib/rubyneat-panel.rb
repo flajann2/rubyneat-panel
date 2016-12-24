@@ -7,14 +7,19 @@ include Fox::Enhancement::Mapper
 
 require_relative 'rubyneat-panel/assets'
 require_relative 'rubyneat-panel/main'
+require_relative 'rubyneat-panel/cli'
 
 module RubyNEAT
   module Panel
     extend Enhancement
-    
-    def self.start
-      puts "We've started."
-      launch
+
+    class << self
+      attr_accessor :opts
+      
+      def start
+        Cli::Main.start
+      end
     end
+    
   end
 end
