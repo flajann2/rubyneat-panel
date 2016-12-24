@@ -16,12 +16,18 @@ fx_horizontal_frame (:overview_info) {
         opts STD_GROUPBOX|LAYOUT_FILL_Y
         fx_matrix {
           n 2
-          opts LAYOUT_FILL_ROW
+          opts MATRIX_BY_COLUMNS|LAYOUT_FILL_ROW
           
           fx_label { text "Address" }
-          fx_label { text "Channel" }
           fx_text_field (:ov_conn_rabbit_addr) { opts LAYOUT_CENTER_X; ncols 40 }
+          fx_label { text "Channel" }
           fx_text_field (:ov_conn_rabbit_channel) { opts LAYOUT_CENTER_X; ncols 40 }
+          fx_label { text "Queue" }
+          fx_text_field (:ov_conn_rabbit_queue) { opts LAYOUT_CENTER_X; ncols 40 }
+          fx_label { text "Routing" }
+          fx_text_field (:ov_conn_rabbit_routing) { opts LAYOUT_CENTER_X; ncols 40 }
+          fx_label { text "Reply" }
+          fx_text_field (:ov_conn_rabbit_reply) { opts LAYOUT_CENTER_X; ncols 40 }
         }
         
         fx_group_box {

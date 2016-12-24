@@ -32,8 +32,7 @@ module RubyNEAT
           Panel::opts = options
           Panel.launch
         end
-        default_task :gui
-        
+        default_task :gui        
       end
     end
   end
