@@ -8,8 +8,8 @@ fx_group_box (:ov_conn_rabbitmq_details) {
       opts MATRIX_BY_COLUMNS|LAYOUT_FILL_ROW
       NCOLS=40
       
-      fx_label { text "Address" }
-      fx_text_field (:ov_conn_rabbit_addr) {
+      fx_label { text "AMQP URL" }
+      fx_text_field (:ov_conn_rabbit_url) {
         opts LAYOUT_CENTER_X
         ncols NCOLS
         instance { |t| t.text = Panel.opts[:url] }
@@ -45,7 +45,10 @@ fx_group_box (:ov_conn_rabbitmq_details) {
         text "CONNECT"
         instance { |b|
           b.sel_command {
-            puts "CONNECT Pressed"
+            Controller.connect url: fxi(:ov_conn_rabbit_url).text,
+                               queue: fxi(:ov_conn_rabbit_queue).text,
+                               routing: fxi(:ov_conn_rabbit_routing).text,
+                               reply: fxi(:ov_conn_rabbit_reply).text
           }
         }
       }
