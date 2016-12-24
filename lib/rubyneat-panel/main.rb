@@ -49,10 +49,10 @@ module RubyNEAT
             opts STD_LAYOUT
 
             # Tabs
-            binding.fx "overview"
-            binding.fx "settings"
-            binding.fx "critters"
-            binding.fx "stats"
+            binding.fx :overview
+            binding.fx :settings
+            binding.fx :critters
+            binding.fx :stats
           end
         end
       end
