@@ -7,7 +7,7 @@ gem "thor",               "~> 0"
 gem "awesome_print",      ">= 1"
 
 group :development do
-  gem "rspec",     "~> 2"
+  gem "rspec",     "~> 3"
   gem "yard",      "~> 0"
   gem "rdoc",      "~> 3"
   gem "bundler",   "~> 1"
