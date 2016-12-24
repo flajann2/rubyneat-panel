@@ -3,7 +3,7 @@
 module RubyNEAT
   module Panel
     def self.launch
-      fox_get_component :app do |app|
+      fox_component :app do |app|
         app.create_fox_components
         app.instance_final_activate
         app.activate

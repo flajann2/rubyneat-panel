@@ -41,8 +41,18 @@ fx_group_box (:ov_conn_rabbitmq_details) {
     
     fx_horizontal_frame {
       opts LAYOUT_CENTER_X
-      fx_button (:ov_conn_rabbit_connect) { text "CONNECT" }
-      fx_button (:ov_conn_rabbit_disconnect) { text "BREAK" }
+      fx_button (:ov_conn_rabbit_connect) {
+        text "CONNECT"
+        instance { |b|
+          b.sel_command {
+            puts "CONNECT Pressed"
+          }
+        }
+      }
+      
+      fx_button (:ov_conn_rabbit_disconnect) {
+        text "BREAK"
+      }
     }
   }
 }
