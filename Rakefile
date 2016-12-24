@@ -23,8 +23,12 @@ Juwelier::Tasks.new do |gem|
   gem.name = "rubyneat-panel"
   gem.homepage = "http://github.com/flajann2/rubyneat-panel"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{RubyNEAT Panel for Ruby Neural Evolution of Augmenting Topologies}
+  
+  gem.description = %Q{RubyNEAT Panel is a dashboard interface to monitor the activities of RubyNEAT. It
+   utilizes the FOX libraries to create a portable GUI to allow to to see and control
+   RubyNEAT in a graphical manner, and to explore the structure of the neural nets.}
+  
   gem.email = "fred.mitchell@gmx.de"
   gem.authors = ["Fred Mitchell"]
   gem.version = s_version

@@ -17,8 +17,6 @@ module RubyNEAT
       class << self
         def connect url: nil, queue: nil, routing: nil, reply: nil
           puts "CONNECTING to #{url}"
-          
-
         end
       end
     end
