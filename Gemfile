@@ -5,6 +5,7 @@ gem 'bunny',              "~> 1"
 gem "fxruby-enhancement", "~> 0"
 gem "thor",               "~> 0"
 gem "awesome_print",      ">= 1"
+gem "json",               "~> 2.0", ">= 2.0.2"
 
 group :development do
   gem "rspec",     "~> 3"
