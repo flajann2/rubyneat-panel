@@ -2,6 +2,8 @@ require 'thor'
 require 'fxruby-enhancement'
 require 'awesome_print'
 require 'rubyneat/daemon'
+require 'oj'
+require 'bunny'
 
 include Fox
 include Fox::Enhancement::Mapper
