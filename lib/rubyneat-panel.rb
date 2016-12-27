@@ -4,6 +4,7 @@ require 'awesome_print'
 require 'rubyneat/daemon'
 require 'oj'
 require 'bunny'
+require 'securerandom'
 
 include Fox
 include Fox::Enhancement::Mapper

@@ -28,8 +28,15 @@ module RubyNEAT
           @amqp[:conn].start
           @amqp[:channel]  = @amqp[:conn].create_channel
           @amqp[:queue]    = @amqp[:channel].queue(@amqp[:queue_name] = queue)
-          @amqp[:exchange] = @amqp[:channel].default_exchange
-
+          @amqp[:exchange] = @amqp[:channel].default_exchange          
+          @amqp[:reply]    = @amqp[:channel].queue(@amqp[:reply_to] = reply)
+          
+          cmd = NEAT::Daemon::Command.new :status
+          @amqp[:exchange].publish Oj.dump(cmd),
+                                   routing_key: routing,
+                                   correlation_id: cmd.call_id,
+                                   reply_to: reply
+          
         end
       end
     end
