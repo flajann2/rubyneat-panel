@@ -7,7 +7,7 @@ gem "thor",               "~> 0"
 gem "awesome_print",      ">= 1"
 gem "json",               "~> 2.0", ">= 2.0.2"
 gem "oj",                 "~> 2"
-gem "rubyneat"
+gem "rubyneat",           "~> 1"
 
 group :development do
   gem "rspec",     "~> 3"
