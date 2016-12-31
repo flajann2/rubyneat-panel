@@ -45,7 +45,7 @@ module RubyNEAT
           # We need to handle the replies
           @amqp[:reply].subscribe { |info, prop, payload|
             puts '#' * 80
-            puts 'Got the reply:'
+            puts "Got the reply: #{payload}"
             pl = Oj.load payload
             ap pl
           }          
