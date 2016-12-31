@@ -33,7 +33,7 @@ module RubyNEAT
           @amqp[:channel]  = @amqp[:conn].create_channel
           @amqp[:queue]    = @amqp[:channel].queue(@amqp[:queue_name] = queue)
           @amqp[:exchange] = @amqp[:channel].default_exchange          
-          @amqp[:reply]    = @amqp[:channel].queue('', exclúsive: true)
+          @amqp[:reply]    = @amqp[:channel].queue('', exclúsive: true, auto_delete: true)
           
           cmd = NEAT::Daemon::Command.new :status
           cmd.payload = :all
