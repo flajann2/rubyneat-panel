@@ -8,7 +8,8 @@ gem "awesome_print",      ">= 1"
 gem "json",               "~> 2.0", ">= 2.0.2"
 gem "oj",                 "~> 2"
 gem "rubyneat",           "~> 1"
-
+gem "queue_ding",         "~> 0"
+    
 group :development do
   gem "rspec",     "~> 3"
   gem "yard",      "~> 0"

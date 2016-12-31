@@ -27,14 +27,7 @@ fx_group_box (:ov_conn_rabbitmq_details) {
         opts LAYOUT_CENTER_X
         ncols NCOLS
         instance { |t| t.text = Panel.opts[:routing] }
-      }
-      
-      fx_label { text "Reply" }
-      fx_text_field (:ov_conn_rabbit_reply) {
-        opts LAYOUT_CENTER_X
-        ncols NCOLS
-        instance { |t| t.text = Panel.opts[:reply] }
-      }
+      }      
     }
     
     fx_spring { opts LAYOUT_FILL_Y;  relw 10 }
@@ -47,8 +40,7 @@ fx_group_box (:ov_conn_rabbitmq_details) {
           b.sel_command {
             Controller.connect url: fxi(:ov_conn_rabbit_url).text,
                                queue: fxi(:ov_conn_rabbit_queue).text,
-                               routing: fxi(:ov_conn_rabbit_routing).text,
-                               reply: fxi(:ov_conn_rabbit_reply).text
+                               routing: fxi(:ov_conn_rabbit_routing).text
           }
         }
       }

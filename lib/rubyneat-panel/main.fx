@@ -1,3 +1,4 @@
+# coding: utf-8
 STD_FRAME      = FRAME_THICK | FRAME_RAISED
 STD_SEPERATOR  = LAYOUT_SIDE_TOP | LAYOUT_FILL_X | SEPARATOR_GROOVE
 STD_LAYOUT     = LAYOUT_FILL_X | LAYOUT_FILL_Y
@@ -6,7 +7,7 @@ CLEAN_GROUPBOX = GROUPBOX_NORMAL
 STD_GROUPBOX   = CLEAN_GROUPBOX | FRAME_GROOVE | LAYOUT_FILL_X 
 
 CLEAN_GROUPBOX_HORIZ  = GROUPBOX_NORMAL | LAYOUT_FILL_X | LAYOUT_FILL_Y
-STD_GROUPBOX_HORIZ  = CLEAN_GROUPBOX_HORIZ | FRAME_GROOVE
+STD_GROUPBOX_HORIZ    = CLEAN_GROUPBOX_HORIZ | FRAME_GROOVE
 
 fx_app :app do
   app_name "RubyNEAT Panel"
@@ -41,6 +42,10 @@ fx_app :app do
         binding.fx :critters
         binding.fx :stats
       end
+    end
+    
+    ingress_handler do |type, payload|
+      ap payload
     end
   end
 end
