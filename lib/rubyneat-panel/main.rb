@@ -34,17 +34,21 @@ module RubyNEAT
           @amqp[:queue]    = @amqp[:channel].queue(@amqp[:queue_name] = queue)
           @amqp[:exchange] = @amqp[:channel].default_exchange          
           @amqp[:reply]    = @amqp[:channel].queue('', exclúsive: true, auto_delete: true)
-          
+
           cmd = NEAT::Daemon::Command.new :status
           cmd.payload = :all
           @amqp[:exchange].publish Oj.dump(cmd),
                                    routing_key: routing,
                                    correlation_id: cmd.call_id,
                                    reply_to: @amqp[:reply].name
-
+          
           # We need to handle the replies
           @amqp[:reply].subscribe { |info, prop, payload|
-          }
+            puts '#' * 80
+            puts 'Got the reply:'
+            pl = Oj.load payload
+            ap pl
+          }          
         end
       end
     end
