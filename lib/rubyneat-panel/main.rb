@@ -7,7 +7,7 @@ module RubyNEAT
         app.create_fox_components
         app.instance_final_activate
         app.activate
-        Controller.initiate_response_handler
+        Enhancement.activate_ingress_handlers app
         app.run_application
       end
     end
@@ -17,10 +17,6 @@ module RubyNEAT
     module Controller
       class << self
         attr_accessor :amqp
-
-        def initiate_response_handler
-          puts "response_handler_called but not implemented"
-        end
         
         def connect url: nil,
                     queue: nil,
@@ -35,8 +31,7 @@ module RubyNEAT
           @amqp[:exchange] = @amqp[:channel].default_exchange          
           @amqp[:reply]    = @amqp[:channel].queue('', exclúsive: true, auto_delete: true)
 
-          cmd = NEAT::Daemon::Command.new :status
-          cmd.payload = :all
+          cmd = NEAT::Daemon::Command.new :status, :all
           @amqp[:exchange].publish Oj.dump(cmd),
                                    routing_key: routing,
                                    correlation_id: cmd.call_id,
@@ -44,7 +39,8 @@ module RubyNEAT
           
           # We need to handle the replies
           @amqp[:reply].subscribe { |info, prop, payload|
-            Enhancement.ingress << Oj.load( payload )
+            pl = Oj.load payload
+            Enhancement.ingress << [pl.cmd, pl]
           }          
         end
       end

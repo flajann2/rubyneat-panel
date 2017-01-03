@@ -44,9 +44,9 @@ fx_app :app do
       end
     end
     
-    ingress_handler do |type, payload|
+    ingress_handler :status do |type, payload|
       puts '#' * 80
-      puts "Ingress:"
+      puts "status Ingress:"
       ap payload
     end
   end
