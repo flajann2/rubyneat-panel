@@ -45,6 +45,8 @@ fx_app :app do
     end
     
     ingress_handler do |type, payload|
+      puts '#' * 80
+      puts "Ingress:"
       ap payload
     end
   end
