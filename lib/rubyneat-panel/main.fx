@@ -44,10 +44,13 @@ fx_app :app do
       end
     end
     
-    ingress_handler :status do |type, payload|
+    ingress_handler :status do |type, status|
       puts '#' * 80
       puts "status Ingress:"
-      ap payload
+      suc, st = status.response
+      wlist = ref :ov_conn_neaters_widget_list
+      wlist.clearItems
+      st[:neaters].each { |neater| wlist.appendItem neater }
     end
   end
 end

@@ -5,10 +5,13 @@ fx_group_box (:ov_conn_neaters_list) {
   fx_vertical_frame {
     opts STD_LAYOUT
     
-    fx_list {
+    fx_list(:ov_conn_neaters_widget_list) {
       opts LIST_EXTENDEDSELECT|STD_LAYOUT
       
-      instance { |list|
+      instance { |l|
+        l.sel_clicked { |ll, selector, index|
+          ref(:ov_conn_neaters_selected).text = ll.getItemText(index)
+        }
       }
     }
     
@@ -19,8 +22,22 @@ fx_group_box (:ov_conn_neaters_list) {
     fx_spring { opts LAYOUT_FILL_Y;  relw 10 }                          
     fx_horizontal_frame {
       opts LAYOUT_CENTER_X
-      fx_button (:ov_conn_neaters_run) { text "RUN" }
-      fx_button (:ov_conn_neaters_halt) { text "STOP" }
+      fx_button (:ov_conn_neaters_run) {
+        text "RUN"
+        instance { |b|
+          b.sel_command {
+            neater = ref(:ov_conn_neaters_selected).text
+            ap neater
+          }
+        }
+      }
+      
+      fx_button (:ov_conn_neaters_halt) {
+        text "STOP"
+        instance{ |b|
+          puts "stop currently running neater"
+        }
+      }
     }
   }
 }
