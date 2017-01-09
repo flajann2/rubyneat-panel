@@ -16,7 +16,7 @@ fx_horizontal_frame (:overview_info) {
         opts STD_GROUPBOX|LAYOUT_FILL_Y
 
         binding.fx :overview_rabbit_details
-        binding.fx :overview_rabbit_channels
+        binding.fx :overview_rabbit_neurons
       }
       
       fx_group_box (:ov_conn_neaters) {
