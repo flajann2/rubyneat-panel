@@ -48,9 +48,14 @@ fx_app :app do
       puts '#' * 80
       puts "status Ingress:"
       suc, st = status.response
+      
       wlist = ref :ov_conn_neaters_widget_list
       wlist.clearItems
       st[:neaters].each { |neater| wlist.appendItem neater }
+
+      nlist = ref :ov_conn_neurons_list
+      nlist.clearItems
+      st[:neurons].each { |neuron| nlist.appendItem neuron}
     end
   end
 end
