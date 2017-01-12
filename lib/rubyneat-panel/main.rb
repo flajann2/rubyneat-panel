@@ -30,12 +30,9 @@ module RubyNEAT
           @amqp[:queue]    = @amqp[:channel].queue(@amqp[:queue_name] = queue)
           @amqp[:exchange] = @amqp[:channel].default_exchange          
           @amqp[:reply]    = @amqp[:channel].queue('', exclúsive: true, auto_delete: true)
-
-          cmd = NEAT::Daemon::Command.new :status, :all
-          @amqp[:exchange].publish Oj.dump(cmd),
-                                   routing_key: routing,
-                                   correlation_id: cmd.call_id,
-                                   reply_to: @amqp[:reply].name
+          @amqp[:routing]  = routing
+          
+          send_cmd :status, :all
           
           # We need to handle the replies
           @amqp[:reply].subscribe { |info, prop, payload|
@@ -43,6 +40,22 @@ module RubyNEAT
             Enhancement.ingress << [pl.cmd, pl]
           }          
         end
+
+        # Shorthand for send_command
+        def send_cmd cmd_symbol, payload
+          send_command NEAT::Daemon::Command.new cmd_symbol, payload
+        end
+        
+        # Send given command object to the RubyNEAT daemom.
+        # The reply will be handled asynchronously.
+        def send_command cmd
+          raise "Must be a command object" unless cmd.is_a? NEAT::Daemon::Command
+          @amqp[:exchange].publish Oj.dump(cmd),
+                                   routing_key: @amqp[:routing],
+                                   correlation_id: cmd.call_id,
+                                   reply_to: @amqp[:reply].name
+        end
+        
       end
     end
   end

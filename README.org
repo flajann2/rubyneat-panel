@@ -1,3 +1,17 @@
+* Table of Contents                                                     :TOC_5:
+ - [[#rubyneat-panel][RubyNEAT Panel]]
+   - [[#description][Description]]
+   - [[#features][Features]]
+   - [[#installation][Installation]]
+     - [[#setup-with-rubyneat][Setup with RubyNEAT]]
+   - [[#documentation][Documentation]]
+   - [[#release-notes-and-known-issues][Release Notes and Known Issues]]
+     - [[#release-notes][Release Notes]]
+     - [[#known-issues][Known Issues]]
+   - [[#contributing-to-rubyneat-panel][Contributing to rubyneat-panel]]
+   - [[#copyright][Copyright]]
+   - [[#the-junkyard--scratchpad][The Junkyard / Scratchpad]]
+
 * RubyNEAT Panel
 ** Description
    RubyNEAT Panel is a dashboard interface to monitor the activities of RubyNEAT. It

@@ -9,8 +9,9 @@ fx_group_box (:ov_conn_neaters_list) {
       opts LIST_EXTENDEDSELECT|STD_LAYOUT
       
       instance { |l|
-        l.sel_clicked { |ll, selector, index|
-          ref(:ov_conn_neaters_selected).text = ll.getItemText(index)
+        l.sel_clicked { |ll, selector, index|          
+          ref(:ov_conn_neaters_selected).text = neater = ll.getItemText(index)
+          Controller.send_cmd :details, neater
         }
       }
     }
@@ -28,6 +29,7 @@ fx_group_box (:ov_conn_neaters_list) {
           b.sel_command {
             neater = ref(:ov_conn_neaters_selected).text
             ap neater
+            Controller.send_cmd :run, neater 
           }
         }
       }
@@ -35,7 +37,10 @@ fx_group_box (:ov_conn_neaters_list) {
       fx_button (:ov_conn_neaters_halt) {
         text "STOP"
         instance{ |b|
-          puts "stop currently running neater"
+          b.sel_command {
+            puts "kill currently running neater"
+            Controller.send_cmd :kill, neater 
+          }
         }
       }
     }
