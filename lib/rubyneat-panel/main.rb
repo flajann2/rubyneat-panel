@@ -37,8 +37,22 @@ module RubyNEAT
           # We need to handle the replies
           @amqp[:reply].subscribe { |info, prop, payload|
             pl = Oj.load payload
-            Enhancement.ingress << [pl.cmd, pl]
-          }          
+            suc, ob = pl.response
+            case suc
+            when :success
+              if pl.is_a? NEAT::Daemon::Command
+                Enhancement.ingress << [pl.cmd, pl] #FIXME: Sould pass back ob instead of the whole command object
+              else
+                raise "Unexpected payload"
+              end
+            when :fail
+              ap pl
+              Enhancement.ingress << [:fail, ob]
+              raise "RubyNEAT Daemon Failure: #{pl}"
+            else
+              raise "RubyNEAT Daemon Unknown Status: :#{suc}"
+            end
+          }
         end
 
         # Shorthand for send_command

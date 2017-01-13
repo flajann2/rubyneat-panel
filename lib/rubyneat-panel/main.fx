@@ -57,5 +57,11 @@ fx_app :app do
       nlist.clearItems
       st[:neurons].each { |neuron| nlist.appendItem neuron}
     end
+
+    ingress_handler :fail do  |type, eb|
+      error_message, backtrace = eb
+      textbox = ref :ov_conn_neater_details
+      textbox.text = error_message + "\n\t" + backtrace.join("\n\t")
+    end
   end
 end
