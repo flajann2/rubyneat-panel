@@ -11,6 +11,7 @@
    - [[#contributing-to-rubyneat-panel][Contributing to rubyneat-panel]]
    - [[#copyright][Copyright]]
    - [[#the-junkyard--scratchpad][The Junkyard / Scratchpad]]
+     - [[#testing-panel][Testing Panel]]
 
 * RubyNEAT Panel
 ** Description
@@ -61,4 +62,8 @@
    no claims to anything in this section for being up to date
    or even accurate. You are free to poke around here, but
    that's about it.
+*** Testing Panel
+    #+begin_src bash
+    rescue bin/neat-panel
+    #+end_src
 
