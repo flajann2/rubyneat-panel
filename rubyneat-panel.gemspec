@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Fred Mitchell".freeze]
-  s.date = "2016-12-27"
+  s.date = "2017-01-14"
   s.description = "RubyNEAT Panel is a dashboard interface to monitor the activities of RubyNEAT. It\n   utilizes the FOX libraries to create a portable GUI to allow to to see and control\n   RubyNEAT in a graphical manner, and to explore the structure of the neural nets.".freeze
   s.email = "fred.mitchell@gmx.de".freeze
   s.executables = ["neat-panel".freeze]
@@ -49,8 +49,10 @@ Gem::Specification.new do |s|
     "lib/rubyneat-panel/main.fx",
     "lib/rubyneat-panel/main.rb",
     "lib/rubyneat-panel/overview.fx",
-    "lib/rubyneat-panel/overview_rabbit_channels.fx",
+    "lib/rubyneat-panel/overview_neaters_details.fx",
+    "lib/rubyneat-panel/overview_neaters_list.fx",
     "lib/rubyneat-panel/overview_rabbit_details.fx",
+    "lib/rubyneat-panel/overview_rabbit_neurons.fx",
     "lib/rubyneat-panel/settings.fx",
     "lib/rubyneat-panel/stats.fx",
     "rubyneat-panel.gemspec",
@@ -75,6 +77,7 @@ Gem::Specification.new do |s|
       s.add_runtime_dependency(%q<json>.freeze, [">= 2.0.2", "~> 2.0"])
       s.add_runtime_dependency(%q<oj>.freeze, ["~> 2"])
       s.add_runtime_dependency(%q<rubyneat>.freeze, ["~> 1"])
+      s.add_runtime_dependency(%q<queue_ding>.freeze, ["~> 0"])
       s.add_development_dependency(%q<rspec>.freeze, ["~> 3"])
       s.add_development_dependency(%q<yard>.freeze, ["~> 0"])
       s.add_development_dependency(%q<rdoc>.freeze, ["~> 3"])
@@ -96,6 +99,7 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<json>.freeze, [">= 2.0.2", "~> 2.0"])
       s.add_dependency(%q<oj>.freeze, ["~> 2"])
       s.add_dependency(%q<rubyneat>.freeze, ["~> 1"])
+      s.add_dependency(%q<queue_ding>.freeze, ["~> 0"])
       s.add_dependency(%q<rspec>.freeze, ["~> 3"])
       s.add_dependency(%q<yard>.freeze, ["~> 0"])
       s.add_dependency(%q<rdoc>.freeze, ["~> 3"])
@@ -118,6 +122,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<json>.freeze, [">= 2.0.2", "~> 2.0"])
     s.add_dependency(%q<oj>.freeze, ["~> 2"])
     s.add_dependency(%q<rubyneat>.freeze, ["~> 1"])
+    s.add_dependency(%q<queue_ding>.freeze, ["~> 0"])
     s.add_dependency(%q<rspec>.freeze, ["~> 3"])
     s.add_dependency(%q<yard>.freeze, ["~> 0"])
     s.add_dependency(%q<rdoc>.freeze, ["~> 3"])
