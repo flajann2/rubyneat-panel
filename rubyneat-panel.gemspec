@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Fred Mitchell".freeze]
-  s.date = "2017-01-14"
+  s.date = "2017-01-15"
   s.description = "RubyNEAT Panel is a dashboard interface to monitor the activities of RubyNEAT. It\n   utilizes the FOX libraries to create a portable GUI to allow to to see and control\n   RubyNEAT in a graphical manner, and to explore the structure of the neural nets.".freeze
   s.email = "fred.mitchell@gmx.de".freeze
   s.executables = ["neat-panel".freeze]

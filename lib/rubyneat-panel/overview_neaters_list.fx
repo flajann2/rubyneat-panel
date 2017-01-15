@@ -11,6 +11,7 @@ fx_group_box (:ov_conn_neaters_list) {
       instance { |l|
         l.sel_clicked { |ll, selector, index|          
           ref(:ov_conn_neaters_selected).text = neater = ll.getItemText(index)
+          ref(:ov_conn_neater_details).text = ''
           Controller.send_cmd :details, neater
         }
       }
