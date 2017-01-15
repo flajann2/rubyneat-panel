@@ -14,11 +14,11 @@ fx_group_box {
     detail_box = ref :ov_conn_neater_details
     case suc
     when :success
-      puts '#' * 80
-      ap details
+      detail_box.backColor = FXColor::LightSeaGreen
+      detail_box.text = details
     when :fail
-      puts '!' * 80
-      ap details
+      detail_box.backColor = FXColor::LightPink
+      detail_box.text = details
     end
   }
 }
