@@ -15,7 +15,7 @@ fx_group_box {
     case suc
     when :success
       detail_box.backColor = FXColor::LightSeaGreen
-      detail_box.text = details
+      detail_box.text = details.to_yaml
     when :fail
       detail_box.backColor = FXColor::LightPink
       detail_box.text = details

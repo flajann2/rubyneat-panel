@@ -5,6 +5,7 @@ require 'rubyneat/daemon'
 require 'oj'
 require 'bunny'
 require 'securerandom'
+require 'yaml'
 
 include Fox
 include Fox::Enhancement::Mapper
