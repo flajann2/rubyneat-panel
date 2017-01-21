@@ -21,6 +21,8 @@ fx_app :app do
         File.open(Assets::BANNER, "r") { |f| pix f.read  }
   }
   
+  fx_image(:back_buffer) { opts IMAGE_KEEP }
+
   fx_main_window (:main) do
     title "RubyNEAT Panel"
     width 900
