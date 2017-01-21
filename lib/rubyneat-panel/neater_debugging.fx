@@ -4,10 +4,8 @@ fx_vertical_frame {
     text "xor Generation 999"
     opts LAYOUT_FILL_X|FRAME_LINE
   }
-  
-  fx_canvas (:neater_evolution_chart) {
-    opts FRAME_RAISED
-  }
+
+  binding.fx :neater_evolution_chart
   
   fx_horizontal_frame {
     opts STD_FRAME|LAYOUT_FILL_X

@@ -48,6 +48,8 @@ Gem::Specification.new do |s|
     "lib/rubyneat-panel/main.fx",
     "lib/rubyneat-panel/main.rb",
     "lib/rubyneat-panel/neater.fx",
+    "lib/rubyneat-panel/neater_debugging.fx",
+    "lib/rubyneat-panel/neater_table.fx",
     "lib/rubyneat-panel/overview.fx",
     "lib/rubyneat-panel/overview_neaters_details.fx",
     "lib/rubyneat-panel/overview_neaters_list.fx",
