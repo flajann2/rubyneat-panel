@@ -4,9 +4,7 @@ fx_group_box {
   opts STD_GROUPBOX_HORIZ
   fx_text (:ov_conn_neater_details) {
     opts ICONLIST_EXTENDEDSELECT|STD_LAYOUT
-    instance { |t|
-      t.editable = false
-    }
+    instance { |t| t.editable = false }
   }
   
   ingress_handler(:details, :run) { |type, cmd|
