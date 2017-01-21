@@ -9,7 +9,7 @@ fx_group_box {
     }
   }
   
-  ingress_handler(:details) { |type, cmd|
+  ingress_handler(:details, :run) { |type, cmd|
     suc, details = cmd.response
     detail_box = ref :ov_conn_neater_details
     case suc

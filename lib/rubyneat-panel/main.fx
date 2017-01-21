@@ -38,8 +38,8 @@ fx_app :app do
         
         # Tabs
         binding.fx :overview
-        binding.fx :settings
-        binding.fx :critters
+        binding.fx :neater
+        binding.fx :population
         binding.fx :stats
       end
     end

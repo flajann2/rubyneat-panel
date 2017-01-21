@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = Gem::Requirement.new(">= 0".freeze) if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib".freeze]
   s.authors = ["Fred Mitchell".freeze]
-  s.date = "2017-01-16"
+  s.date = "2017-01-21"
   s.description = "RubyNEAT Panel is a dashboard interface to monitor the activities of RubyNEAT. It\n   utilizes the FOX libraries to create a portable GUI to allow to to see and control\n   RubyNEAT in a graphical manner, and to explore the structure of the neural nets.".freeze
   s.email = "fred.mitchell@gmx.de".freeze
   s.executables = ["neat-panel".freeze]
@@ -45,7 +45,6 @@ Gem::Specification.new do |s|
     "lib/rubyneat-panel.rb",
     "lib/rubyneat-panel/assets.rb",
     "lib/rubyneat-panel/cli.rb",
-    "lib/rubyneat-panel/critters.fx",
     "lib/rubyneat-panel/main.fx",
     "lib/rubyneat-panel/main.rb",
     "lib/rubyneat-panel/overview.fx",
@@ -53,7 +52,6 @@ Gem::Specification.new do |s|
     "lib/rubyneat-panel/overview_neaters_list.fx",
     "lib/rubyneat-panel/overview_rabbit_details.fx",
     "lib/rubyneat-panel/overview_rabbit_neurons.fx",
-    "lib/rubyneat-panel/settings.fx",
     "lib/rubyneat-panel/stats.fx",
     "rubyneat-panel.gemspec",
     "spec/rubyneat-panel_spec.rb",

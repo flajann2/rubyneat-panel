@@ -1,6 +1,6 @@
-# Critters tab
+# Population tab
 
-fx_tab_item { text "C&ritters" }
+fx_tab_item { text "&Population" }
 fx_horizontal_frame {
   opts STD_FRAME
   fx_dir_list {
